@@ -1,26 +1,29 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>For My Special One ❤️</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Special Person ❤️</title>
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
+      font-family: Arial, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      min-height: 100vh;
       color: white;
       overflow-x: hidden;
       background:
-        radial-gradient(circle at top left, #ff7eb3, transparent 35%),
-        radial-gradient(circle at bottom right, #7b2ff7, transparent 35%),
-        linear-gradient(135deg, #16001f, #3d073f);
+        radial-gradient(circle at top left, #ff6b9d55, transparent 35%),
+        radial-gradient(circle at bottom right, #7b2ff755, transparent 35%),
+        linear-gradient(135deg, #17001d, #42052f 55%, #19002d);
     }
 
     .container {
@@ -33,27 +36,30 @@
       justify-content: space-between;
       align-items: center;
       padding: 22px 0;
+      position: relative;
+      z-index: 5;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 22px;
       font-weight: bold;
     }
 
-    .heart {
-      color: #ff5c8a;
-      animation: beat 1s infinite;
+    .logo span {
+      color: #ff80a8;
     }
 
-    @keyframes beat {
-      50% { transform: scale(1.25); }
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      opacity: .85;
     }
 
     .hero {
       min-height: 88vh;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
       position: relative;
     }
@@ -65,80 +71,95 @@
 
     .tag {
       display: inline-block;
-      padding: 8px 18px;
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 30px;
-      background: rgba(255,255,255,.12);
-      backdrop-filter: blur(10px);
+      padding: 9px 18px;
       margin-bottom: 22px;
+      border: 1px solid #ffffff55;
+      border-radius: 30px;
+      background: #ffffff18;
+      backdrop-filter: blur(10px);
     }
 
     h1 {
-      font-size: clamp(42px, 8vw, 88px);
+      font-size: clamp(42px, 8vw, 86px);
       line-height: 1.05;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     h1 span {
-      color: #ff8fb3;
-      text-shadow: 0 0 25px rgba(255, 83, 145, .7);
+      color: #ff9cba;
+      text-shadow: 0 0 25px #ff4f91;
     }
 
     .hero p {
       font-size: 18px;
-      line-height: 1.7;
+      line-height: 1.8;
       opacity: .9;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
     button {
       border: none;
-      cursor: pointer;
       color: white;
+      cursor: pointer;
       font-size: 16px;
-      padding: 14px 26px;
+      padding: 14px 25px;
+      margin: 6px;
       border-radius: 30px;
-      background: linear-gradient(135deg, #ff4f91, #9d43ff);
-      box-shadow: 0 10px 30px rgba(255, 65, 145, .35);
+      background: linear-gradient(135deg, #ff4f91, #9845ff);
+      box-shadow: 0 10px 30px #ff4f9155;
       transition: .3s;
     }
 
     button:hover {
       transform: translateY(-4px) scale(1.03);
-      box-shadow: 0 15px 35px rgba(255, 65, 145, .55);
+      box-shadow: 0 15px 35px #ff4f9880;
     }
 
-    .message {
-      display: none;
-      margin: 30px auto 0;
-      padding: 24px;
-      max-width: 650px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.13);
-      border: 1px solid rgba(255,255,255,.25);
+    button:disabled {
+      cursor: not-allowed;
+      opacity: .7;
+      transform: none;
+    }
+
+    .outline-btn {
+      background: transparent;
+      border: 1px solid #ffffff66;
+      box-shadow: none;
+    }
+
+    .message,
+    .secret-message,
+    .quiz-box,
+    .wish-box {
+      max-width: 680px;
+      margin: 25px auto;
+      padding: 28px;
+      border-radius: 24px;
+      background: #ffffff16;
+      border: 1px solid #ffffff35;
       backdrop-filter: blur(15px);
       line-height: 1.8;
+    }
+
+    .message,
+    .secret-message {
+      display: none;
       animation: appear .8s ease;
     }
 
-    @keyframes appear {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     section {
-      padding: 70px 0;
+      padding: 75px 0;
       text-align: center;
     }
 
     .section-title {
       font-size: 34px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .section-subtitle {
       opacity: .75;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
     }
 
     .cards {
@@ -151,33 +172,34 @@
       padding: 28px 20px;
       min-height: 190px;
       border-radius: 22px;
-      background: rgba(255,255,255,.12);
-      border: 1px solid rgba(255,255,255,.22);
+      background: #ffffff14;
+      border: 1px solid #ffffff2e;
       backdrop-filter: blur(12px);
       transition: .3s;
     }
 
     .card:hover {
       transform: translateY(-8px);
-      background: rgba(255,255,255,.18);
+      background: #ffffff25;
     }
 
-    .card .icon {
+    .icon {
       font-size: 42px;
       margin-bottom: 12px;
     }
 
     .card h3 {
       margin-bottom: 10px;
+      color: #ffb6ce;
     }
 
     .card p {
-      opacity: .82;
+      opacity: .85;
       line-height: 1.6;
     }
 
     .timeline {
-      max-width: 700px;
+      max-width: 720px;
       margin: auto;
       text-align: left;
     }
@@ -187,12 +209,74 @@
       padding: 20px;
       border-left: 4px solid #ff6b9d;
       border-radius: 0 16px 16px 0;
-      background: rgba(255,255,255,.1);
+      background: #ffffff14;
     }
 
     .timeline-item h3 {
       color: #ffabc5;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
+    }
+
+    .quiz-box h3 {
+      margin-bottom: 20px;
+      font-size: 22px;
+    }
+
+    .option-btn {
+      display: block;
+      width: 100%;
+      background: #ffffff18;
+      border: 1px solid #ffffff40;
+      box-shadow: none;
+    }
+
+    .option-btn:hover {
+      background: #ff6b9d66;
+    }
+
+    #quizResult,
+    #wishResult,
+    #complimentResult {
+      color: #ffd2e1;
+      margin: 18px 0;
+      font-size: 18px;
+    }
+
+    #nextBtn {
+      display: none;
+    }
+
+    .wish-input {
+      width: min(90%, 450px);
+      padding: 15px 20px;
+      border: none;
+      outline: none;
+      border-radius: 30px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .compliment-box {
+      max-width: 650px;
+      margin: auto;
+      padding: 28px;
+      border-radius: 24px;
+      background: #ffffff16;
+      border: 1px solid #ffffff35;
+    }
+
+    .heart {
+      color: #ff719e;
+      animation: beat 1s infinite;
+      display: inline-block;
+    }
+
+    .floating-heart {
+      position: fixed;
+      bottom: -40px;
+      pointer-events: none;
+      z-index: 20;
+      animation: floatUp 6s linear forwards;
     }
 
     footer {
@@ -201,13 +285,22 @@
       opacity: .8;
     }
 
-    .floating-heart {
-      position: fixed;
-      bottom: -30px;
-      font-size: 22px;
-      animation: floatUp 6s linear forwards;
-      pointer-events: none;
-      z-index: 1;
+    @keyframes beat {
+      50% {
+        transform: scale(1.3);
+      }
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @keyframes floatUp {
@@ -215,6 +308,7 @@
         transform: translateY(0) rotate(0deg);
         opacity: 1;
       }
+
       100% {
         transform: translateY(-110vh) rotate(360deg);
         opacity: 0;
@@ -226,12 +320,20 @@
         grid-template-columns: 1fr;
       }
 
+      nav {
+        font-size: 14px;
+      }
+
       .hero {
         min-height: 78vh;
       }
 
       .hero p {
         font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 28px;
       }
     }
   </style>
@@ -240,16 +342,21 @@
 <body>
 
   <div class="container">
+
     <nav>
-      <div class="logo">For You <span class="heart">♥</span></div>
-      <div>Our Little World ✨</div>
+      <div class="logo">For You <span>♥</span></div>
+      <a class="nav-link" href="#quiz">Surprise 🎁</a>
     </nav>
 
     <main class="hero">
       <div class="hero-content">
-        <div class="tag">A small surprise for my special person 💌</div>
 
-        <h1>Hey <span id="gfName">mera baccha </span> ❤️</h1>
+        <div class="tag">
+          A small surprise for my special person 💌
+        </div>
+
+        <!-- Yahan naam change karein -->
+        <h1>Hey <span id="gfName">mera pyara baccha</span> <span>❤️</span></h1>
 
         <p>
           Tum meri life ka woh beautiful part ho jiske bina sab kuch
@@ -257,97 +364,368 @@
           duniya ki sabse pyari cheez hai.
         </p>
 
-        <button onclick="showSurprise()">Click For Your Surprise 💝</button>
+        <button onclick="showSurprise()">
+          Click For Your Surprise 💝
+        </button>
+
+        <button class="outline-btn" onclick="createHearts()">
+          Send Love ❤️
+        </button>
 
         <div class="message" id="surprise">
-          Tum perfect nahi ho—aur main bhi nahi hoon।  
-          Lekin jab hum saath hote hain, toh sab kuch perfect lagta hai।  
-          Thank you meri life mein hone ke liye।  
-          I promise, main tumhe hamesha respect, care aur khushiyan dene ki koshish karunga। ❤️
+          Tum perfect nahi ho, aur main bhi nahi hoon.
+          Lekin jab hum saath hote hain, toh sab kuch perfect lagta hai।
+          Thank you meri life mein hone ke liye।
+          Tum mere liye bahut special ho aur hamesha rahogi ❤️
         </div>
+
       </div>
     </main>
 
     <section>
       <h2 class="section-title">Why You Are Special ✨</h2>
-      <p class="section-subtitle">Kuch baatein jo tumhe alag banati hain</p>
+      <p class="section-subtitle">
+        Kuch baatein jo tumhe sabse alag banati hain
+      </p>
 
       <div class="cards">
+
         <div class="card">
           <div class="icon">😊</div>
           <h3>Your Smile</h3>
-          <p>Tumhari smile mera mood ek second mein better kar deti hai.</p>
+          <p>
+            Tumhari smile mera mood ek second mein better kar deti hai.
+          </p>
         </div>
 
         <div class="card">
           <div class="icon">🌸</div>
           <h3>Your Kind Heart</h3>
-          <p>Tumhara caring nature tumhe sabse beautiful banata hai.</p>
+          <p>
+            Tumhara caring nature tumhe bahut beautiful banata hai.
+          </p>
         </div>
 
         <div class="card">
           <div class="icon">🌙</div>
           <h3>Your Presence</h3>
-          <p>Tum paas hoti ho toh simple moments bhi memorable ban jaate hain.</p>
+          <p>
+            Tum paas hoti ho toh simple moments bhi memorable ban jaate hain.
+          </p>
         </div>
+
       </div>
     </section>
 
     <section>
       <h2 class="section-title">Our Little Memories 🥰</h2>
-      <p class="section-subtitle">In dates ko apni real memories se replace karein</p>
+      <p class="section-subtitle">
+        In lines ko apni real memories se replace karein
+      </p>
 
       <div class="timeline">
+
         <div class="timeline-item">
           <h3>Our First Conversation</h3>
-          <p>Yahan apni first chat ya meeting ki story likhein.</p>
+          <p>
+            Yahan apni first chat ya first meeting ki story likhein.
+          </p>
         </div>
 
         <div class="timeline-item">
           <h3>Our Best Moment</h3>
-          <p>Yahan apni favourite memory aur uski date add karein.</p>
+          <p>
+            Yahan apni favourite memory aur uski date add karein.
+          </p>
         </div>
 
         <div class="timeline-item">
-          <h3>Always Together</h3>
-          <p>Future mein aur bhi beautiful memories create karni hain ❤️</p>
+          <h3>Our Beautiful Future</h3>
+          <p>
+            Saath mein aur bhi bahut saari beautiful memories banani hain ❤️
+          </p>
         </div>
+
+      </div>
+    </section>
+
+    <section id="quiz">
+      <h2 class="section-title">Love Quiz Game 💖</h2>
+      <p class="section-subtitle">
+        Dekhte hain tum mujhe kitna jaanti ho 😄
+      </p>
+
+      <div class="quiz-box">
+        <h3 id="question">Question yahan aayega</h3>
+
+        <div id="options"></div>
+
+        <p id="quizResult"></p>
+
+        <button onclick="nextQuestion()" id="nextBtn">
+          Next Question ➜
+        </button>
       </div>
     </section>
 
     <section>
-      <h2 class="section-title">One Last Thing 💌</h2>
+      <h2 class="section-title">A Message For You 💌</h2>
       <p class="section-subtitle">
-        Tum meri favourite notification, favourite person aur favourite feeling ho.
+        Is button ko tab press karna jab tum mujhe miss karo
       </p>
-      <button onclick="createHearts()">Send Love ❤️</button>
+
+      <button onclick="openSecret()">
+        Open When You Miss Me 🥺
+      </button>
+
+      <div class="secret-message" id="secretMessage">
+        Jab bhi tum mujhe miss karo, bas yaad rakhna—
+        duniya mein ek pagal insaan hai jo tumhari smile ke liye
+        kuch bhi kar sakta hai।
+        Tum meri favourite person ho और हमेशा रहोगी ❤️
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Make a Wish ✨</h2>
+      <p class="section-subtitle">
+        Apni wish likho, shayad magic ho jaye
+      </p>
+
+      <div class="wish-box">
+        <input
+          id="wishInput"
+          class="wish-input"
+          type="text"
+          placeholder="Apni wish yahan likho..."
+        >
+
+        <br><br>
+
+        <button onclick="makeWish()">
+          Make My Wish 🌟
+        </button>
+
+        <p id="wishResult"></p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Your Compliment Today 🌷</h2>
+      <p class="section-subtitle">
+        Button press karo aur ek special compliment pao
+      </p>
+
+      <div class="compliment-box">
+        <button onclick="newCompliment()">
+          Get A Compliment 💗
+        </button>
+
+        <p id="complimentResult">
+          Tumhari presence hi ek compliment hai ❤️
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">One Last Thing 💕</h2>
+
+      <p class="section-subtitle">
+        Tum meri favourite notification, favourite person
+        aur favourite feeling ho।
+      </p>
+
+      <button onclick="finalSurprise()">
+        Final Surprise 🎉
+      </button>
+
+      <div class="message" id="finalMessage">
+        I may not be perfect, lekin tumhe khush rakhne ki
+        poori koshish hamesha karunga।
+        Thank you meri life mein hone ke liye।
+        I really care about you ❤️
+      </div>
     </section>
 
     <footer>
-      Made with love, only for you ❤️
+      Made with love, only for you <span class="heart">❤️</span>
     </footer>
+
   </div>
 
   <script>
+    /*
+      Apni GF ke naam ke liye:
+      document.getElementById("gfName").innerText = "Anjali";
+    */
+
     function showSurprise() {
-      const surprise = document.getElementById("surprise");
-      surprise.style.display = "block";
+      document.getElementById("surprise").style.display = "block";
+      createHearts();
+    }
+
+    function finalSurprise() {
+      document.getElementById("finalMessage").style.display = "block";
+      createHearts();
+      createHearts();
+    }
+
+    function openSecret() {
+      document.getElementById("secretMessage").style.display = "block";
       createHearts();
     }
 
     function createHearts() {
+      const hearts = ["❤️", "💖", "💕", "💗", "✨", "🌸"];
+
       for (let i = 0; i < 18; i++) {
         const heart = document.createElement("div");
+
         heart.className = "floating-heart";
-        heart.innerHTML = ["❤️", "💖", "💕", "💗", "✨"][Math.floor(Math.random() * 5)];
+        heart.innerText = hearts[Math.floor(Math.random() * hearts.length)];
+
         heart.style.left = Math.random() * 100 + "vw";
-        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
-        heart.style.fontSize = (18 + Math.random() * 20) + "px";
+        heart.style.fontSize = 18 + Math.random() * 22 + "px";
+        heart.style.animationDuration = 4 + Math.random() * 4 + "s";
+
         document.body.appendChild(heart);
 
-        setTimeout(() => heart.remove(), 8000);
+        setTimeout(function () {
+          heart.remove();
+        }, 8000);
       }
     }
+
+    const quizQuestions = [
+      {
+        question: "Meri sabse favourite person kaun hai?",
+        options: ["Tum ❤️", "Koi aur", "Mujhe nahi pata"],
+        answer: "Tum ❤️"
+      },
+      {
+        question: "Tumhari smile mere liye kya hai?",
+        options: ["Magic ✨", "Normal", "Secret"],
+        answer: "Magic ✨"
+      },
+      {
+        question: "Hum dono ko future mein kya karna hai?",
+        options: [
+          "Bahut saari memories banana 💕",
+          "Ladhna",
+          "Boring rehna"
+        ],
+        answer: "Bahut saari memories banana 💕"
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      const current = quizQuestions[currentQuestion];
+
+      document.getElementById("question").innerText = current.question;
+
+      const optionsBox = document.getElementById("options");
+      optionsBox.innerHTML = "";
+
+      document.getElementById("quizResult").innerText = "";
+      document.getElementById("nextBtn").style.display = "none";
+
+      current.options.forEach(function(option) {
+        const button = document.createElement("button");
+
+        button.innerText = option;
+        button.className = "option-btn";
+
+        button.onclick = function() {
+          checkAnswer(option);
+        };
+
+        optionsBox.appendChild(button);
+      });
+    }
+
+    function checkAnswer(selectedAnswer) {
+      const correctAnswer = quizQuestions[currentQuestion].answer;
+      const result = document.getElementById("quizResult");
+
+      if (selectedAnswer === correctAnswer) {
+        score++;
+        result.innerText =
+          "Bilkul correct! Tum mujhe bahut achhe se jaanti ho 😍";
+        createHearts();
+      } else {
+        result.innerText =
+          "Wrong answer, lekin tum phir bhi meri favourite ho ❤️";
+      }
+
+      document.querySelectorAll(".option-btn").forEach(function(button) {
+        button.disabled = true;
+      });
+
+      document.getElementById("nextBtn").style.display = "inline-block";
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+
+      if (currentQuestion < quizQuestions.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("question").innerText =
+          "Quiz Complete! 🎉";
+
+        document.getElementById("options").innerHTML = "";
+
+        document.getElementById("quizResult").innerText =
+          "Tumhara score " + score + "/" +
+          quizQuestions.length +
+          " hai. Lekin mere dil mein tumhara score hamesha 100/100 hai ❤️";
+
+        document.getElementById("nextBtn").style.display = "none";
+
+        createHearts();
+        createHearts();
+      }
+    }
+
+    function makeWish() {
+      const wish = document.getElementById("wishInput").value.trim();
+      const result = document.getElementById("wishResult");
+
+      if (wish === "") {
+        result.innerText = "Pehle apni wish likho 😊";
+        return;
+      }
+
+      result.innerText =
+        "Tumhari wish universe tak bhej di gayi hai ✨ " +
+        "I hope yeh jaldi poori ho ❤️";
+
+      document.getElementById("wishInput").value = "";
+      createHearts();
+    }
+
+    const compliments = [
+      "Tumhari smile kisi bhi din ko beautiful bana sakti hai 😊",
+      "Tum jitni cute ho, utni hi strong bhi ho 💪",
+      "Tumhare jaisa caring person milna lucky baat hai 🌸",
+      "Tumhari aankhon mein bahut special magic hai ✨",
+      "Tum simple moments ko bhi memorable bana deti ho 💕",
+      "Tum meri life ki sabse beautiful feeling ho ❤️"
+    ];
+
+    function newCompliment() {
+      const randomNumber = Math.floor(Math.random() * compliments.length);
+
+      document.getElementById("complimentResult").innerText =
+        compliments[randomNumber];
+
+      createHearts();
+    }
+
+    loadQuestion();
   </script>
 
 </body>
